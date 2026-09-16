@@ -157,10 +157,10 @@ suite('Unit Tests', function () {
     });
     // #18
     test('#instanceOf, #notInstanceOf', function () {
-      assert.instanceOf(myCar, Car);
+      assert.notInstanceOf(myCar, Car);
       assert.instanceOf(airlinePlane, Plane);
       assert.instanceOf(airlinePlane, Object);
-      assert.instanceOf(myCar.wheels, Number);
+      assert.notInstanceOf(myCar.wheels, Number);
     });
   });
 
