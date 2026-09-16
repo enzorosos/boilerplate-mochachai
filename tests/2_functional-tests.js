@@ -68,10 +68,16 @@ suite('Functional Tests', function () {
 });
 
 const Browser = require('zombie');
+Browser.site = 'https://boilerplate-mochachai-8wk8.onrender.com'; // Your URL here
+
 
 suite('Functional Tests with Zombie.js', function () {
   this.timeout(5000);
+  const browser = new Browser();
 
+  suiteSetup(function(done) {
+    return browser.visit('/', done);
+  });
 
 
   suite('Headless browser', function () {
