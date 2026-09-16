@@ -149,18 +149,18 @@ suite('Unit Tests', function () {
     });
     // #17
     test('#typeOf, #notTypeOf', function () {
-      assert.notTypeOf(myCar, 'object');
-      assert.notTypeOf(myCar.model, 'string');
+      assert.typeOf(myCar, 'object');
+      assert.typeOf(myCar.model, 'string');
       assert.notTypeOf(airlinePlane.wings, 'string');
-      assert.notTypeOf(airlinePlane.engines, 'array');
-      assert.notTypeOf(myCar.wheels, 'number');
+      assert.typeOf(airlinePlane.engines, 'array');
+      assert.typeOf(myCar.wheels, 'number');
     });
     // #18
     test('#instanceOf, #notInstanceOf', function () {
-      assert.fail(myCar, Plane);
-      assert.fail(airlinePlane, Plane);
-      assert.fail(airlinePlane, Object);
-      assert.fail(myCar.wheels, String);
+      assert.instanceOf(myCar, Car);
+      assert.instanceOf(airlinePlane, Plane);
+      assert.instanceOf(airlinePlane, Object);
+      assert.instanceOf(myCar.wheels, Number);
     });
   });
 
