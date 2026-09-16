@@ -67,6 +67,11 @@ suite('Functional Tests', function () {
   });
 });
 
+const util = require('util');
+if (typeof util.isRegExp !== 'function') {
+  util.isRegExp = value => Object.prototype.toString.call(value) === '[object RegExp]';
+}
+
 const Browser = require('zombie');
 Browser.site = 'https://boilerplate-mochachai-8wk8.onrender.com'; // Your URL here
 
