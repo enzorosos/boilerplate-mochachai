@@ -159,7 +159,7 @@ suite('Unit Tests', function () {
     test('#instanceOf, #notInstanceOf', function () {
       assert.notInstanceOf(myCar, Car);
       assert.instanceOf(airlinePlane, Plane);
-      assert.instanceOf(airlinePlane, Object);
+      assert.instanceOf(airlinePlane, Object, 'everything is an Object');
       assert.notInstanceOf(myCar.wheels, String);
     });
   });
