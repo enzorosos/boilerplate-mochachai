@@ -93,8 +93,8 @@ suite('Functional Tests with Zombie.js', function () {
         browser.pressButton('submit', function () {
           browser.assert.success();
           browser.assert.status(200);
-          browser.assert.text('span#name', 'Cristoforo');
-          browser.assert.text('span#surname', 'Colombo');
+          assert.equal(browser.querySelector('span#name').textContent, 'Cristoforo');
+          assert.equal(browser.querySelector('span#surname').textContent, 'Colombo');
           browser.assert.elements('span#dates', 1);
           done();
         });
